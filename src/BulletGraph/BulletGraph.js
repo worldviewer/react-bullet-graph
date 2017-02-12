@@ -1,5 +1,7 @@
 import React from 'react';
 import './BulletGraph.css';
+import './HorizontalBulletGraph';
+import './VerticalBulletGraph';
 
 const BulletGraph = React.createClass({
 	propTypes: {
@@ -31,6 +33,37 @@ const BulletGraph = React.createClass({
     render: function() {
         return (
             <div className="BulletGraph">
+            	{ this.props.orientation == "horizontal" &&
+            		<HorizontalBulletGraph
+            			title={this.props.title}
+            			textLabel={this.props.textLabel}
+            			scaleMin={this.props.scaleMin}
+            			performanceValue={this.props.performanceValue}
+            			symbolMarker={this.props.symbolMarker}
+            			badVal={this.props.badVal}
+            			satisfactoryVal={this.props.satisfactoryVal}
+            			scaleUnits={this.props.scaleUnits}
+            			titleStyle={this.props.titleStyle}
+            			textFont={this.props.textFont}
+            			badColor={this.props.badColor}
+            			satisfactoryColor={this.props.satisfactoryColor}
+            			goodColor={this.props.goodColor} /> }
+
+            	{ this.props.orientation == "vertical" &&
+            		<VerticalBulletGraph
+            			title={this.props.title}
+            			textLabel={this.props.textLabel}
+            			scaleMin={this.props.scaleMin}
+            			performanceValue={this.props.performanceValue}
+            			symbolMarker={this.props.symbolMarker}
+            			badVal={this.props.badVal}
+            			satisfactoryVal={this.props.satisfactoryVal}
+            			scaleUnits={this.props.scaleUnits}
+            			titleStyle={this.props.titleStyle}
+            			textFont={this.props.textFont}
+            			badColor={this.props.badColor}
+            			satisfactoryColor={this.props.satisfactoryColor}
+            			goodColor={this.props.goodColor} /> }
 
             </div>
         );
