@@ -7,17 +7,15 @@ class App extends Component {
         return (
             <div className="App">
                 <BulletGraph
-                    orientation="horizontal"
                     title="Revenue 2005 YTD"
                     textLabel="(U.S. $ in thousands)"
-                    scaleMin={0}
+                    scaleMin={100}
                     scaleMax={300}
                     performanceVal={275}
                     symbolMarker={265}
                     badVal={200}
                     satisfactoryVal={250}
-                    scaleUnits="none"
-                    titleStyle="bold" />
+                    scaleUnits="none" />
             </div>
         );
     }
