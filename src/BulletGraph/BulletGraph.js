@@ -10,7 +10,7 @@ const BulletGraph = React.createClass({
 		textLabel: React.PropTypes.string.isRequired,
 		scaleMin: React.PropTypes.number.isRequired,
 		scaleMax: React.PropTypes.number.isRequired,
-		performanceValue: React.PropTypes.number,
+		performanceVal: React.PropTypes.number,
 		symbolMarker: React.PropTypes.number,
 		badVal: React.PropTypes.number,
 		satisfactoryVal: React.PropTypes.number,
@@ -38,7 +38,7 @@ const BulletGraph = React.createClass({
             			title={this.props.title}
             			textLabel={this.props.textLabel}
             			scaleMin={this.props.scaleMin}
-            			performanceValue={this.props.performanceValue}
+            			performanceVal={this.props.performanceVal}
             			symbolMarker={this.props.symbolMarker}
             			badVal={this.props.badVal}
             			satisfactoryVal={this.props.satisfactoryVal}
@@ -54,7 +54,7 @@ const BulletGraph = React.createClass({
             			title={this.props.title}
             			textLabel={this.props.textLabel}
             			scaleMin={this.props.scaleMin}
-            			performanceValue={this.props.performanceValue}
+            			performanceVal={this.props.performanceVal}
             			symbolMarker={this.props.symbolMarker}
             			badVal={this.props.badVal}
             			satisfactoryVal={this.props.satisfactoryVal}

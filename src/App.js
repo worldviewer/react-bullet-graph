@@ -12,7 +12,7 @@ class App extends Component {
                     textLabel="(U.S. $ in thousands)"
                     scaleMin={0}
                     scaleMax={300}
-                    performanceValue={275}
+                    performanceVal={275}
                     symbolMarker={265}
                     badVal={200}
                     satisfactoryVal={250}
