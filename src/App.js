@@ -16,7 +16,8 @@ class App extends Component {
                     symbolMarker={265}
                     badVal={200}
                     satisfactoryVal={250}
-                    scaleUnits="none" />
+                    scaleUnits="none"
+                    titleStyle="bold" />
             </div>
         );
     }
