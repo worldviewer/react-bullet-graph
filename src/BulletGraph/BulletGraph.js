@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './BulletGraph.css';
 
-class BulletGraph extends Component {
+const BulletGraph = React.createClass({
 	propTypes: {
 		orientation: React.PropTypes.string.isRequired,
 		title: React.PropTypes.string.isRequired,
@@ -13,16 +13,28 @@ class BulletGraph extends Component {
 		badVal: React.PropTypes.number,
 		satisfactoryVal: React.PropTypes.number,
 		scaleUnits: React.PropTypes.string,
-		titleStyle: React.PropTypes.string
-	}
+		titleStyle: React.PropTypes.string,
+		textFont: React.PropTypes.string,
+		badColor: React.PropTypes.string,
+		satisfactoryColor: React.PropTypes.string,
+		goodColor: React.PropTypes.string		
+	},
 
-    render() {
+	getDefaultProps: function() {
+		return {
+			badColor: "#999999",
+			satisfactoryColor: "#bbbbbb",
+			goodColor: "#dddddd"
+		}
+	},
+
+    render: function() {
         return (
             <div className="BulletGraph">
-            	<p>testing</p>
+
             </div>
         );
     }
-}
+});
 
 export default BulletGraph;

@@ -10,12 +10,12 @@ class App extends Component {
                     orientation="horizontal"
                     title="Revenue 2005 YTD"
                     textLabel="(U.S. $ in thousands)"
-                    scaleMin="0"
-                    scaleMax="300"
-                    performanceValue="275"
-                    symbolMarker="265"
-                    badVal="200"
-                    satisfactoryVal="250"
+                    scaleMin={0}
+                    scaleMax={300}
+                    performanceValue={275}
+                    symbolMarker={265}
+                    badVal={200}
+                    satisfactoryVal={250}
                     scaleUnits="none" />
             </div>
         );
