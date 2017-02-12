@@ -1,7 +1,7 @@
 import React from 'react';
 import './BulletGraph.css';
-import './HorizontalBulletGraph';
-import './VerticalBulletGraph';
+import HorizontalBulletGraph from './HorizontalBulletGraph';
+import VerticalBulletGraph from './VerticalBulletGraph';
 
 const BulletGraph = React.createClass({
 	propTypes: {
@@ -33,7 +33,7 @@ const BulletGraph = React.createClass({
     render: function() {
         return (
             <div className="BulletGraph">
-            	{ this.props.orientation == "horizontal" &&
+            	{ this.props.orientation === "horizontal" &&
             		<HorizontalBulletGraph
             			title={this.props.title}
             			textLabel={this.props.textLabel}
@@ -49,7 +49,7 @@ const BulletGraph = React.createClass({
             			satisfactoryColor={this.props.satisfactoryColor}
             			goodColor={this.props.goodColor} /> }
 
-            	{ this.props.orientation == "vertical" &&
+            	{ this.props.orientation === "vertical" &&
             		<VerticalBulletGraph
             			title={this.props.title}
             			textLabel={this.props.textLabel}
