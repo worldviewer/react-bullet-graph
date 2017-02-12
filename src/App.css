@@ -1,3 +1,8 @@
 .App {
     margin: 100px;
+    width: 70%;
+}
+
+.BulletGraph {
+    margin-bottom: 100px;
 }

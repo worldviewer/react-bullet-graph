@@ -2,6 +2,7 @@ import React from 'react';
 
 const HorizontalBulletGraph = React.createClass({
     render: function() {
+    	// Normalize values which exceed scaleMax prop
     	let badVal = Math.min(this.props.badVal, this.props.scaleMax),
     		satisfactoryVal = Math.min(this.props.satisfactoryVal, this.props.scaleMax),
     		performanceVal = Math.min(this.props.performanceVal, this.props.scaleMax),
@@ -13,7 +14,7 @@ const HorizontalBulletGraph = React.createClass({
 
     	let horizontalBulletGraphStyles = {
     		display: "flex",
-    		justifyContent: "center"
+    		justifyContent: "flex-end"
     	};
 
     	let graphStyles = {
@@ -31,6 +32,7 @@ const HorizontalBulletGraph = React.createClass({
     		fontSize: "18px",
     		lineHeight: this.props.height + "px",
     		margin: "0",
+    		textAlign: "right",
     		whiteSpace: "nowrap"
     	};
 
@@ -64,6 +66,8 @@ const HorizontalBulletGraph = React.createClass({
     		zIndex: 3
     	};
 
+    	let performanceWidth = (performanceVal - this.props.scaleMin)*widthScale;
+
     	let performanceValStyles = {
     		backgroundColor: "black",
     		height: this.props.height/3 + "px",
@@ -72,7 +76,7 @@ const HorizontalBulletGraph = React.createClass({
     		marginTop: this.props.height/3 + "px",
     		position: "absolute",
     		top: "0",
-    		width: (performanceVal - this.props.scaleMin)*widthScale + "px",
+    		width: performanceWidth + "px",
     		zIndex: 4
     	};
 
@@ -130,47 +134,23 @@ const HorizontalBulletGraph = React.createClass({
 		});
 
         return (
-            <div className="HorizontalBulletGraph"
-            	style={horizontalBulletGraphStyles}>
+            <div style={horizontalBulletGraphStyles}>
 
-            	<div className="Legend" style={legendStyles}>
-	 				<div className="Title">
-	 					<p style={titleStyles}>{this.props.title}</p>
-	 				</div>
-	 				<div className="TextLabel">
-	 					<p style={textLabelStyles}>{this.props.textLabel}</p>
-	 				</div>
+            	<div style={legendStyles}>
+ 					<p style={titleStyles}>{this.props.title}</p>
+ 					<p style={textLabelStyles}>{this.props.textLabel}</p>
  				</div>
 
  				<div className="Graph" style={graphStyles}>
- 					<div className="GoodVal"
- 						style={goodValStyles}>
- 						
- 					</div>
+ 					<div style={goodValStyles}></div>
 
- 					{ Number.isInteger(satisfactoryVal) &&
- 						<div className="SatisfactoryVal"
- 							style={satisfactoryValStyles}>
- 						
- 					</div> }
+ 					{ !isNaN(satisfactoryVal) && <div style={satisfactoryValStyles}></div> }
 
- 					{ Number.isInteger(badVal) &&
- 						<div className="BadVal"
- 							style={badValStyles}>
- 						
- 					</div> }
+ 					{ !isNaN(badVal) &&	<div style={badValStyles}></div> }
 
- 					{ Number.isInteger(performanceVal) &&
- 						<div className="PerformanceVal"
- 							style={performanceValStyles}>
+ 					{ !isNaN(performanceVal) && <div style={performanceValStyles}></div> }
 
- 					</div> }
-
- 					{ Number.isInteger(symbolMarker) &&
- 						<div className="SymbolMarker"
- 							style={symbolMarkerStyles}>
-
- 					</div> }
+ 					{ !isNaN(symbolMarker) && <div style={symbolMarkerStyles}></div> }
 
  					<div className="QuantitativeScale"
  						style={quantitativeScaleStyles}>
@@ -184,7 +164,7 @@ const HorizontalBulletGraph = React.createClass({
  						{ ticks.map( (tick) => (
  							<p key={tick.key}
  								style={tick.numStyles}>
- 								{tick.value}
+ 								{tick.value}{this.props.scaleUnits || ''}
  							</p>
  						) ) }
 
