@@ -164,7 +164,7 @@ const HorizontalBulletGraph = React.createClass({
  						{ ticks.map( (tick) => (
  							<p key={tick.key}
  								style={tick.numStyles}>
- 								{tick.value}{this.props.scaleUnits || ''}
+ 								{this.props.unitsPrefix || ''}{tick.value}{this.props.unitsSuffix || ''}
  							</p>
  						) ) }
 

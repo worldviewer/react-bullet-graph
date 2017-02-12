@@ -11,7 +11,8 @@ const BulletGraph = React.createClass({
 		symbolMarker: React.PropTypes.number,
 		badVal: React.PropTypes.number,
 		satisfactoryVal: React.PropTypes.number,
-		scaleUnits: React.PropTypes.string,
+		unitsPrefix: React.PropTypes.string,
+		unitsSuffix: React.PropTypes.string,
 		titleStyle: React.PropTypes.string,
 		textFont: React.PropTypes.string,
 		badColor: React.PropTypes.string,
@@ -43,7 +44,8 @@ const BulletGraph = React.createClass({
         			symbolMarker={this.props.symbolMarker}
         			badVal={this.props.badVal}
         			satisfactoryVal={this.props.satisfactoryVal}
-        			scaleUnits={this.props.scaleUnits}
+        			unitsSuffix={this.props.unitsSuffix}
+        			unitsPrefix={this.props.unitsPrefix}
         			titleStyle={this.props.titleStyle}
         			textFont={this.props.textFont}
         			badColor={this.props.badColor}

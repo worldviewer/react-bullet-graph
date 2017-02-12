@@ -14,8 +14,7 @@ const App = React.createClass({
 					performanceVal: 275,
 					symbolMarker: 265,
 					badVal: 200,
-					satisfactoryVal: 250,
-					scaleUnits: ""
+					satisfactoryVal: 250
 				},
 				{
 					title: "Profit",
@@ -26,7 +25,7 @@ const App = React.createClass({
 					symbolMarker: 27,
 					badVal: 20,
 					satisfactoryVal: 25,
-					scaleUnits: "%"
+					unitsSuffix: "%"
 				},
 				{
 					title: "Avg Order Size",
@@ -37,7 +36,7 @@ const App = React.createClass({
 					symbolMarker: 550,
 					badVal: 350,
 					satisfactoryVal: 500,
-					scaleUnits: ""
+					unitsPrefix: "$"
 				},
 				{
 					title: "New Customers",
@@ -48,7 +47,6 @@ const App = React.createClass({
 					symbolMarker: 2100,
 					badVal: 1400,
 					satisfactoryVal: 2000,
-					scaleUnits: "",
 					height: 100,
 					width: 400
 				},
@@ -61,7 +59,7 @@ const App = React.createClass({
 					symbolMarker: 4.6,
 					badVal: 3.5,
 					satisfactoryVal: 4.4,
-					scaleUnits: "",
+					unitsSuffix: " stars",
 					width: 600
 				},
 
@@ -87,7 +85,8 @@ const App = React.createClass({
 								symbolMarker={graph.symbolMarker}
 								badVal={graph.badVal}
 								satisfactoryVal={graph.satisfactoryVal}
-								scaleUnits={graph.scaleUnits}
+								unitsSuffix={graph.unitsSuffix}
+								unitsPrefix={graph.unitsPrefix}
 								height={graph.height}
 								width={graph.width}
 							/>
